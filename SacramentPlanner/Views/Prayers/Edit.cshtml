@@ -1,0 +1,50 @@
+@model SacramentPlanner.Models.Prayer
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<form asp-action="Edit">
+    <div class="form-horizontal">
+        <h4>Prayer</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="PrayerId" />
+        <div class="form-group">
+            <label asp-for="FkPrayerType" class="control-label col-md-2"></label>
+            <div class="col-md-10">
+                <select asp-for="FkPrayerType" class="form-control" asp-items="ViewBag.FkPrayerType"></select>
+                <span asp-validation-for="FkPrayerType" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="PrayerDate" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="PrayerDate" class="form-control" />
+                <span asp-validation-for="PrayerDate" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="FkWardMemberId" class="control-label col-md-2"></label>
+            <div class="col-md-10">
+                <select asp-for="FkWardMemberId" class="form-control" asp-items="ViewBag.FkWardMemberId"></select>
+                <span asp-validation-for="FkWardMemberId" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

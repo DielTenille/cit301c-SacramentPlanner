@@ -1,0 +1,125 @@
+@model SacramentPlanner.Models.SacramentMeeting
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>SacramentMeeting</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <input type="hidden" asp-for="SacramentMeetingId" />
+        <dt>
+            @Html.DisplayNameFor(model => model.SacramentDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SacramentDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.BabyBlessing)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.BabyBlessing)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Confirmation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Confirmation)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FkWardBusiness)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FkWardBusiness)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FkYouthSpeaker)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FkYouthSpeaker)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FkFirstSpeaker)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FkFirstSpeaker)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FkSecondSpeaker)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FkSecondSpeaker)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FkClosingPrayerNavigation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FkClosingPrayerNavigation.PrayerId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FkClosingSongNavigation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FkClosingSongNavigation.HymnTitle)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FkConductingNavigation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FkConductingNavigation.Fname)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FkIntermediateSongNavigation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FkIntermediateSongNavigation.HymnTitle)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FkMeetingTopicNavigation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FkMeetingTopicNavigation.TopicTitle)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FkMusicLeaderNavigation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FkMusicLeaderNavigation.Fname)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FkMusicPlayerNavigation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FkMusicPlayerNavigation.Fname)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FkOpenPrayerNavigation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FkOpenPrayerNavigation.PrayerId)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FkOpenSongNavigation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FkOpenSongNavigation.HymnTitle)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FkSacramentSongNavigation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FkSacramentSongNavigation.HymnTitle)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            <a asp-action="Index">Back to List</a>
+        </div>
+    </form>
+</div>

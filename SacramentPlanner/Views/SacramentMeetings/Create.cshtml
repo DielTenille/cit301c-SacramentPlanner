@@ -1,0 +1,144 @@
+@model SacramentPlanner.Models.SacramentMeeting
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<form asp-action="Create">
+    <div class="form-horizontal">
+        <h4>SacramentMeeting</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        @*<div class="form-group">
+            <label asp-for="SacramentMeetingId" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="SacramentMeetingId" class="form-control" />
+                <span asp-validation-for="SacramentMeetingId" class="text-danger"></span>
+            </div>
+        </div>*@
+        <div class="form-group">
+            <label asp-for="SacramentDate" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="SacramentDate" class="form-control" />
+                <span asp-validation-for="SacramentDate" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="FkConducting" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="FkConducting" class ="form-control" asp-items="ViewBag.FkConducting"></select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="FkMusicLeader" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="FkMusicLeader" class ="form-control" asp-items="ViewBag.FkMusicLeader"></select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="FkMusicPlayer" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="FkMusicPlayer" class ="form-control" asp-items="ViewBag.FkMusicPlayer"></select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="FkMeetingTopic" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="FkMeetingTopic" class ="form-control" asp-items="ViewBag.FkMeetingTopic"></select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="BabyBlessing" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="BabyBlessing" class="form-control" />
+                <span asp-validation-for="BabyBlessing" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Confirmation" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Confirmation" class="form-control" />
+                <span asp-validation-for="Confirmation" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="FkOpenPrayer" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="FkOpenPrayer" class ="form-control" asp-items="ViewBag.FkOpenPrayer"></select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="FkOpenSong" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="FkOpenSong" class ="form-control" asp-items="ViewBag.FkOpenSong"></select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="FkSacramentSong" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="FkSacramentSong" class ="form-control" asp-items="ViewBag.FkSacramentSong"></select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="FkWardBusiness" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="FkWardBusiness" class="form-control" />
+                <span asp-validation-for="FkWardBusiness" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="FkYouthSpeaker" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="FkYouthSpeaker" class="form-control" />
+                <span asp-validation-for="FkYouthSpeaker" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="FkFirstSpeaker" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="FkFirstSpeaker" class="form-control" />
+                <span asp-validation-for="FkFirstSpeaker" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="FkSecondSpeaker" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="FkSecondSpeaker" class="form-control" />
+                <span asp-validation-for="FkSecondSpeaker" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="FkIntermediateSong" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="FkIntermediateSong" class ="form-control" asp-items="ViewBag.FkIntermediateSong"></select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="FkClosingSong" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="FkClosingSong" class ="form-control" asp-items="ViewBag.FkClosingSong"></select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="FkClosingPrayer" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="FkClosingPrayer" class ="form-control" asp-items="ViewBag.FkClosingPrayer"></select>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,24 @@
+@model SacramentPlanner.Models.PrayerType
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PrayerType</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TypePrayer)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TypePrayer)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.PrayerTypeId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

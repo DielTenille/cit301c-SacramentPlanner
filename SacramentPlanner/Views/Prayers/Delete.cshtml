@@ -1,0 +1,41 @@
+@model SacramentPlanner.Models.Prayer
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Prayer</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <input type="hidden" asp-for="PrayerId" />
+        <dt>
+            @Html.DisplayNameFor(model => model.PrayerDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PrayerDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FkPrayerTypeNavigation)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FkPrayerTypeNavigation.TypePrayer)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FkWardMember)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FkWardMember.Fname)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            <a asp-action="Index">Back to List</a>
+        </div>
+    </form>
+</div>

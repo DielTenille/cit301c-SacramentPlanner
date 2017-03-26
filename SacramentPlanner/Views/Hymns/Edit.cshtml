@@ -1,0 +1,50 @@
+@model SacramentPlanner.Models.Hymn
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<form asp-action="Edit">
+    <div class="form-horizontal">
+        <h4>Hymn</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="HymnId" />
+        <div class="form-group">
+            <label asp-for="HymnTitle" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="HymnTitle" class="form-control" />
+                <span asp-validation-for="HymnTitle" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="HymnNum" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="HymnNum" class="form-control" />
+                <span asp-validation-for="HymnNum" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="FkHymnType" class="control-label col-md-2"></label>
+            <div class="col-md-10">
+                <select asp-for="FkHymnType" class="form-control" asp-items="ViewBag.FkHymnType"></select>
+                <span asp-validation-for="FkHymnType" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

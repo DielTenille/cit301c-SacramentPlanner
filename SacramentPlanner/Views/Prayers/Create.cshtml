@@ -1,0 +1,54 @@
+@model SacramentPlanner.Models.Prayer
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<form asp-action="Create">
+    <div class="form-horizontal">
+        <h4>Prayer</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        @*<div class="form-group">
+            <label asp-for="PrayerId" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="PrayerId" class="form-control" />
+                <span asp-validation-for="PrayerId" class="text-danger"></span>
+            </div>
+        </div>*@
+        <div class="form-group">
+            <label asp-for="FkPrayerType" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="FkPrayerType" class ="form-control" asp-items="ViewBag.FkPrayerType"></select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="PrayerDate" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="PrayerDate" class="form-control" />
+                <span asp-validation-for="PrayerDate" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="FkWardMemberId" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="FkWardMemberId" class ="form-control" asp-items="ViewBag.FkWardMemberId"></select>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

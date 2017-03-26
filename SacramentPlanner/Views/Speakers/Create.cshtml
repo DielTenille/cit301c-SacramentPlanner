@@ -1,0 +1,60 @@
+@model SacramentPlanner.Models.Speaker
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<form asp-action="Create">
+    <div class="form-horizontal">
+        <h4>Speaker</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        @*<div class="form-group">
+            <label asp-for="SpeakerId" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="SpeakerId" class="form-control" />
+                <span asp-validation-for="SpeakerId" class="text-danger"></span>
+            </div>
+        </div>*@
+        <div class="form-group">
+            <label asp-for="SpeakerDate" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="SpeakerDate" class="form-control" />
+                <span asp-validation-for="SpeakerDate" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="FkWardMember" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="FkWardMember" class ="form-control" asp-items="ViewBag.FkWardMember"></select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="FkTopic" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="FkTopic" class ="form-control" asp-items="ViewBag.FkTopic"></select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="FkSpeakerType" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="FkSpeakerType" class ="form-control" asp-items="ViewBag.FkSpeakerType"></select>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
